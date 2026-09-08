@@ -284,3 +284,478 @@ transition: all 1s;
     width: 430px;
 
    }
+   
+   /* =========================================
+   TABLET VIEW
+   ========================================= */
+
+@media (max-width: 1024px) {
+
+  /* Navbar */
+  #navbar {
+    padding: 18px 25px;
+  }
+
+  #nav {
+    gap: 18px;
+  }
+
+  #nav a {
+    font-size: 14px;
+  }
+
+  #nav-name {
+    font-size: 18px;
+  }
+
+  /* Home */
+  #info {
+    margin-top: 60px;
+    gap: 30px;
+    padding: 0 30px;
+  }
+
+  #info-right h1 {
+    font-size: 65px;
+    margin-top: 30px;
+  }
+
+  #info-right p {
+    width: 350px;
+  }
+
+  #fhoto {
+    width: 330px;
+    height: 330px;
+  }
+
+  /* About */
+  #about {
+    margin-right: 40px;
+    padding: 30px;
+  }
+
+  #about h1 {
+    font-size: 65px !important;
+  }
+
+  #about-1 {
+    margin-left: 40px;
+    margin-right: 40px;
+  }
+
+  .img-1 {
+    width: 300px;
+    height: 300px;
+    margin-left: 20px;
+    margin-right: 30px;
+  }
+
+  #about-para p:first-child {
+    font-size: 30px !important;
+  }
+
+  /* Skills */
+  #skills {
+    margin-left: 40px;
+    padding: 30px;
+  }
+
+  #skills h1 {
+    font-size: 65px !important;
+  }
+
+  .skill {
+    gap: 45px;
+  }
+
+  .skill-icon h1 {
+    font-size: 4.5rem;
+  }
+
+  /* Projects */
+  #project {
+    margin-right: 40px;
+    padding: 30px;
+  }
+
+  #project h1 {
+    font-size: 65px !important;
+  }
+
+  #projects {
+    margin-left: 40px;
+    margin-right: 40px;
+    gap: 20px;
+    height: 330px;
+  }
+
+  #pro-1,
+  #pro-2 {
+    width: 45%;
+    height: 300px;
+  }
+
+  /* Contact */
+  #contact {
+    margin-left: 30px;
+    padding: 30px;
+  }
+
+  #contact h1 {
+    font-size: 65px !important;
+  }
+
+  #sahil {
+    gap: 40px;
+    margin-left: 30px;
+  }
+
+  #touch {
+    margin-left: 0;
+  }
+
+  #your-contact {
+    width: 400px;
+  }
+
+  #your-name,
+  #your-email,
+  #bio {
+    width: 360px;
+  }
+
+  .send {
+    width: 380px;
+  }
+}
+
+
+/* =========================================
+   MOBILE VIEW
+   ========================================= */
+
+@media (max-width: 600px) {
+
+  /* Prevent horizontal scrolling */
+  /* html,
+  body {
+    width: 100%;
+    overflow-x: hidden;
+  } */
+
+  /* ================= NAVBAR ================= */
+html{
+  scroll-behavior: smooth ;}
+  #navbar {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    padding: 15px 12px;
+    box-sizing: border-box;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  #nav-name {
+    font-size: 20px;
+  }
+
+  #nav {
+    width: 100%;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    position: sticky;
+  }
+
+  #nav a {
+    font-size: 11px;
+  }
+
+  #nav a:hover {
+    scale: 1.05;
+  }
+
+
+  /* ================= HOME ================= */
+
+  #info {
+    margin-top: 40px;
+    margin-bottom: 70px;
+    padding: 0 20px;
+    flex-direction: column-reverse;
+    text-align: center;
+    gap: 30px;
+  }
+
+  #info-right {
+    line-height: 25px;
+    width: 100%;
+  }
+
+  #info-right h1 {
+    font-size: 48px;
+    margin-top: 15px;
+  }
+
+  #info-right p {
+    width: 100%;
+    margin-top: 25px;
+    font-size: 14px;
+  }
+
+  #fhoto {
+    width: 260px;
+    height: 260px;
+  }
+
+  .btnText,
+  .btnText-1 {
+    display: inline-block;
+    margin: 8px 4px;
+  }
+
+
+  /* ================= ABOUT ================= */
+
+  #about {
+    margin-right: 0;
+    padding: 20px;
+    text-align: center;
+  }
+
+  #about h1 {
+    font-size: 48px !important;
+  }
+
+  #about-1 {
+    margin-left: 20px;
+    margin-right: 20px;
+    padding: 0;
+    flex-direction: column;
+    gap: 30px;
+    text-align: center;
+    margin-bottom: 80px;
+  }
+
+  .img-1 {
+    width: 250px;
+    height: 250px;
+    margin: 0;
+  }
+
+  #about-para {
+    width: 100%;
+  }
+
+  #about-para p:first-child {
+    font-size: 25px !important;
+  }
+
+  #about-para p:last-child {
+    font-size: 15px !important;
+    line-height: 25px;
+  }
+
+
+  /* ================= SKILLS ================= */
+
+  #skills {
+    margin-left: 0;
+    padding: 20px;
+    text-align: center;
+    margin-bottom: 50px;
+  }
+
+  #skills h1 {
+    font-size: 48px !important;
+  }
+
+  #skill {
+    margin-bottom: 80px;
+    padding: 0 15px;
+  }
+
+  .skill {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    width: 100%;
+  }
+
+  .skill-icon h1 {
+    font-size: 3.5rem;
+    justify-content: center;
+  }
+
+  /* Disable huge drag area on mobile */
+  .skill-icon {
+    touch-action: none;
+  }
+
+
+  /* ================= PROJECTS ================= */
+
+  #project {
+    margin-right: 0;
+    padding: 20px;
+    text-align: center;
+  }
+
+  #project h1 {
+    font-size: 48px !important;
+  }
+
+  #projects {
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 0;
+    height: auto;
+    flex-direction: column;
+    gap: 30px;
+    padding: 10px;
+    margin-bottom: 80px;
+  }
+
+  #pro-1,
+  #pro-2 {
+    width: 100%;
+    height: 230px;
+  }
+
+  #pro-1:hover,
+  #pro-2:hover {
+    scale: 1.03;
+  }
+
+
+  /* ================= CONTACT ================= */
+
+  #contact {
+    margin-left: 0;
+    padding: 20px;
+    text-align: center;
+  }
+
+  #contact h1 {
+    font-size: 45px !important;
+  }
+
+  #sahil {
+    flex-direction: column;
+    gap: 40px;
+    margin-left: 20px;
+    margin-right: 20px;
+    text-align: center;
+  }
+
+  #touch {
+    margin-left: 0;
+    width: 100%;
+  }
+
+  #touch h2 {
+    font-size: 35px !important;
+  }
+
+  #my-contact {
+    width: 100%;
+  }
+
+  .contact-info {
+    /* justify-content: center; */
+    font-size: 13px;
+  }
+
+  #logo {
+    justify-content: center;
+    gap: 15px;
+    padding: 15px;
+  }
+
+  #logo h1 {
+    font-size: 20px;
+  }
+
+  #logo img {
+    width: 45px !important;
+  }
+
+
+  /* Contact Form */
+
+  #your-contact {
+    width: 100%;
+    height: auto;
+    min-height: 400px;
+    box-sizing: border-box;
+    padding: 10px;
+  }
+
+  #your-contact > div:first-child {
+    padding: 15px !important;
+  }
+
+  #your-contact p {
+    font-size: 13px;
+  }
+
+  #your-contact p span {
+    font-size: 25px !important;
+  }
+
+  #your-name,
+  #your-email,
+  #bio {
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .send {
+    width: 100%;
+  }
+}
+
+
+/* =========================================
+   VERY SMALL MOBILE
+   ========================================= */
+
+@media (max-width: 380px) {
+
+  #nav {
+    gap: 8px;
+  }
+
+  #nav a {
+    font-size: 9px;
+  }
+
+  #info-right h1 {
+    font-size: 40px;
+  }
+
+  #fhoto {
+    width: 220px;
+    height: 220px;
+  }
+
+  #about h1,
+  #skills h1,
+  #project h1 {
+    font-size: 40px !important;
+  }
+
+  .skill {
+    gap: 15px;
+  }
+
+  .skill-icon h1 {
+    font-size: 2.8rem;
+  }
+
+  #contact h1 {
+    font-size: 37px !important;
+  }
+}

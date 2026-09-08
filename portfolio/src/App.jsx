@@ -531,7 +531,7 @@ function App() {
                 width="40px"
               />
               <b>
-                <span>sahilshaikh30249@gmail.com</span>
+                <span>sahilshaikh@gmail.com</span>
               </b>
             </div>
             <div className="contact-info">
@@ -541,7 +541,7 @@ function App() {
                 width="40px"
               />
               <b>
-                <span>+91 70280 86523</span>
+                <span>+91 702XXXX523</span>
               </b>
             </div>
             <div className="contact-info">
