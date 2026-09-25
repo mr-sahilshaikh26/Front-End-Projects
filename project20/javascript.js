@@ -124,22 +124,22 @@
 
 
 // TASK 9
-// let arr = [200, 900, 500, 3500]
-// let discount = 0
-// function bill(arr) {
-//   let total = arr.reduce((a, b) => a + b, 0);
+let arr = [200, 900, 500, 3500]
+let discount = 0
+function bill(arr) {
+  let total = arr.reduce((a, b) => a + b, 0);
  
-// if (total > 5000) {
-//     discount = total * 10 / 100;
-//   } else {
-//     discount = 0;
-//   }
-//   console.log("Total:", total);
-//   console.log("Discount:", discount);
-//   console.log("Final:", total - discount);
-// }
+if (total > 5000) {
+    discount = total * 10 / 100;
+  } else {
+    discount = 0;
+  }
+  console.log("Total:", total);
+  console.log("Discount:", discount);
+  console.log("Final:", total - discount);
+}
 
-// bill(arr);
+bill(arr);
 
 // TASK 10/
 

@@ -1,14 +1,14 @@
 // TASK 1
 
 // let num = "9322978542"
-// function ganesh (num){
+// function sahil (num){
 // console.log( `XXXXXX${num.slice(6)}`);
 // }
 // ganesh(num)
 
 // TASK 2
 // let name = "Resume.pdf";
-// function ganesh(name){
+// function sahil(name){
 //     let arrstr = name.split(".")
 //     console.log(arrstr.pop());
 // }
