@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -7,5 +7,603 @@
 </head>
 <body>
     <h1>SHAIKH SAHIL</h1>
+</body>
+</html> -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>JEE HUNT — 35 Years Archive</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- ================= SPLASH ================= -->
+  <div id="splash">
+    <div class="splash-logo">18</div>
+    <div class="splash-title">JEE HUNT</div>
+    <div class="splash-sub">35 YEARS • YOUR PREP ARCHIVE</div>
+  </div>
+
+
+  <!-- ================= APP ================= -->
+  <div id="app">
+
+    <!-- TOP BAR -->
+    <header class="topbar">
+      <div>
+        <div class="brand">JEE <span>HUNT</span></div>
+        <div class="brand-sub">35 YEARS ARCHIVE</div>
+      </div>
+
+      <div class="top-actions">
+        <button id="searchBtn" class="icon-btn">⌕</button>
+        <button id="profileBtn" class="profile-btn">R</button>
+      </div>
+    </header>
+
+
+    <!-- SEARCH -->
+    <section id="searchBox" class="search-box hidden">
+      <input
+        id="searchInput"
+        type="text"
+        placeholder="Search questions, chapters, topics..."
+      >
+    </section>
+
+
+    <!-- ================= DASHBOARD ================= -->
+    <main id="dashboard" class="page active">
+
+      <section class="hero">
+        <div class="eyebrow">TODAY'S MISSION</div>
+
+        <h1 id="greeting">Hunt your weak spots.</h1>
+
+        <p>
+          Don't solve everything.<br>
+          Solve what actually needs you.
+        </p>
+
+        <div class="hero-actions">
+          <button class="primary-btn" onclick="startHunt()">
+            START HUNT →
+          </button>
+
+          <button class="secondary-btn" onclick="openPage('timeattack')">
+            TIME ATTACK
+          </button>
+        </div>
+      </section>
+
+
+      <!-- DAILY TARGET -->
+      <section class="section">
+        <div class="section-head">
+          <div>
+            <div class="section-label">DAILY TARGET</div>
+            <h2 id="dailyProgressText">0 / 20</h2>
+          </div>
+
+          <button class="small-btn" onclick="changeTarget()">
+            CHANGE
+          </button>
+        </div>
+
+        <div class="progress-track">
+          <div id="dailyProgress" class="progress-fill"></div>
+        </div>
+
+        <div class="muted" id="dailyMessage">
+          Start solving to build today's progress.
+        </div>
+      </section>
+
+
+      <!-- STREAK -->
+      <section class="stats-grid">
+
+        <div class="stat-card">
+          <div class="stat-number" id="streakValue">0</div>
+          <div class="stat-label">DAY STREAK</div>
+        </div>
+
+        <div class="stat-card">
+          <div class="stat-number" id="solvedValue">0</div>
+          <div class="stat-label">SOLVED</div>
+        </div>
+
+        <div class="stat-card">
+          <div class="stat-number" id="accuracyValue">—</div>
+          <div class="stat-label">ACCURACY</div>
+        </div>
+
+      </section>
+
+
+      <!-- SUBJECTS -->
+      <section class="section">
+
+        <div class="section-head">
+          <div>
+            <div class="section-label">YOUR DNA</div>
+            <h2>Performance</h2>
+          </div>
+
+          <button class="small-btn" onclick="openPage('dna')">
+            FULL VIEW →
+          </button>
+        </div>
+
+        <div id="subjectCards" class="subject-grid"></div>
+
+      </section>
+
+
+      <!-- QUICK MODES -->
+      <section class="section">
+
+        <div class="section-label">QUICK MODES</div>
+
+        <div class="mode-list">
+
+          <button class="mode-card" onclick="startMistakes()">
+            <div class="mode-icon">×</div>
+            <div>
+              <strong>MISTAKE LAB</strong>
+              <span>Repeat what you got wrong.</span>
+            </div>
+            <b>→</b>
+          </button>
+
+          <button class="mode-card" onclick="openPage('archive')">
+            <div class="mode-icon">▣</div>
+            <div>
+              <strong>ARCHIVE</strong>
+              <span>Explore JEE questions by year.</span>
+            </div>
+            <b>→</b>
+          </button>
+
+          <button class="mode-card" onclick="openPage('papers')">
+            <div class="mode-icon">□</div>
+            <div>
+              <strong>FULL PAPERS</strong>
+              <span>Attempt complete papers.</span>
+            </div>
+            <b>→</b>
+          </button>
+
+        </div>
+
+      </section>
+
+
+      <!-- RECENT -->
+      <section class="section">
+
+        <div class="section-head">
+          <div>
+            <div class="section-label">RECENT</div>
+            <h2>Sessions</h2>
+          </div>
+        </div>
+
+        <div id="recentSessions" class="recent-list"></div>
+
+      </section>
+
+    </main>
+
+
+    <!-- ================= ARCHIVE ================= -->
+    <main id="archive" class="page">
+
+      <div class="page-title">
+        <div class="eyebrow">THE ARCHIVE</div>
+        <h1>1991 — 2026</h1>
+        <p>Find the question. Know the pattern.</p>
+      </div>
+
+      <div class="filter-row">
+
+        <select id="archiveExam">
+          <option value="all">All Exams</option>
+          <option value="JEE Main">JEE Main</option>
+          <option value="JEE Advanced">JEE Advanced</option>
+        </select>
+
+        <select id="archiveSubject">
+          <option value="all">All Subjects</option>
+          <option value="Physics">Physics</option>
+          <option value="Chemistry">Chemistry</option>
+          <option value="Maths">Maths</option>
+        </select>
+
+      </div>
+
+      <div id="yearGrid" class="year-grid"></div>
+
+      <div class="section">
+        <div class="section-label">AVAILABLE DATA</div>
+        <div id="archiveQuestions" class="question-list"></div>
+      </div>
+
+    </main>
+
+
+    <!-- ================= PAPERS ================= -->
+    <main id="papers" class="page">
+
+      <div class="page-title">
+        <div class="eyebrow">FULL PAPERS</div>
+        <h1>Paper Mode</h1>
+        <p>One paper. One sitting. No distractions.</p>
+      </div>
+
+      <div id="paperList" class="paper-list"></div>
+
+    </main>
+
+
+    <!-- ================= TIME ATTACK ================= -->
+    <main id="timeattack" class="page">
+
+      <div class="page-title">
+        <div class="eyebrow">TIME ATTACK</div>
+        <h1>Beat the clock.</h1>
+        <p>Speed + accuracy under pressure.</p>
+      </div>
+
+      <div id="timerSetup" class="timer-setup">
+
+        <div class="timer-options">
+
+          <button onclick="startTimeAttack(5)" class="timer-option">
+            <strong>05</strong>
+            <span>MINUTES</span>
+          </button>
+
+          <button onclick="startTimeAttack(15)" class="timer-option">
+            <strong>15</strong>
+            <span>MINUTES</span>
+          </button>
+
+          <button onclick="startTimeAttack(30)" class="timer-option">
+            <strong>30</strong>
+            <span>MINUTES</span>
+          </button>
+
+          <button onclick="startTimeAttack(60)" class="timer-option">
+            <strong>60</strong>
+            <span>MINUTES</span>
+          </button>
+
+        </div>
+
+      </div>
+
+      <div id="attackArea" class="hidden">
+
+        <div class="attack-header">
+          <div>
+            <span class="section-label">TIME LEFT</span>
+            <div id="attackTimer" class="big-timer">05:00</div>
+          </div>
+
+          <button class="danger-btn" onclick="finishAttack()">
+            FINISH
+          </button>
+        </div>
+
+        <div id="attackQuestion"></div>
+
+      </div>
+
+    </main>
+
+
+    <!-- ================= MISTAKES ================= -->
+    <main id="mistakes" class="page">
+
+      <div class="page-title">
+        <div class="eyebrow">MISTAKE LAB</div>
+        <h1>Your wrong answers.</h1>
+        <p>The fastest way to find what needs fixing.</p>
+      </div>
+
+      <div id="mistakeList" class="question-list"></div>
+
+    </main>
+
+
+    <!-- ================= DNA ================= -->
+    <main id="dna" class="page">
+
+      <div class="page-title">
+        <div class="eyebrow">YOUR DNA</div>
+        <h1>Performance map.</h1>
+        <p>Your preparation, based on your actual attempts.</p>
+      </div>
+
+      <div id="dnaContent"></div>
+
+    </main>
+
+
+    <!-- ================= QUESTION ================= -->
+    <main id="question" class="page">
+
+      <div class="question-top">
+
+        <button class="back-btn" onclick="goBack()">
+          ← BACK
+        </button>
+
+        <div class="question-meta">
+          <span id="qExam"></span>
+          <span id="qYear"></span>
+        </div>
+
+        <button id="bookmarkBtn" class="icon-btn">
+          ☆
+        </button>
+
+      </div>
+
+
+      <div class="question-info">
+
+        <span id="qSubject" class="tag"></span>
+        <span id="qDifficulty" class="tag"></span>
+
+      </div>
+
+
+      <div id="questionNumber" class="question-number"></div>
+
+      <h1 id="questionText" class="question-text"></h1>
+
+      <div id="options" class="options"></div>
+
+
+      <div class="question-actions">
+
+        <button id="reviewBtn" class="secondary-btn">
+          MARK REVIEW
+        </button>
+
+        <button id="submitBtn" class="primary-btn">
+          SUBMIT
+        </button>
+
+      </div>
+
+
+      <div id="solutionBox" class="solution-box hidden"></div>
+
+    </main>
+
+
+    <!-- ================= RESULT ================= -->
+    <main id="result" class="page">
+
+      <div class="result-header">
+
+        <div class="eyebrow">SESSION COMPLETE</div>
+
+        <div id="resultScore" class="result-score">
+          0%
+        </div>
+
+        <h1 id="resultTitle">
+          Session complete.
+        </h1>
+
+        <p id="resultSubtitle"></p>
+
+      </div>
+
+      <div id="resultStats" class="result-stats"></div>
+
+      <div class="result-actions">
+
+        <button class="primary-btn" onclick="openPage('dashboard')">
+          DASHBOARD →
+        </button>
+
+        <button class="secondary-btn" onclick="startMistakes()">
+          REVIEW MISTAKES
+        </button>
+
+      </div>
+
+    </main>
+
+
+    <!-- ================= CREATE ================= -->
+    <main id="create" class="page">
+
+      <div class="page-title">
+        <div class="eyebrow">CREATE</div>
+        <h1>Your own questions.</h1>
+        <p>Add questions you want to remember.</p>
+      </div>
+
+      <form id="createForm" class="create-form">
+
+        <input id="cExam" placeholder="Exam e.g. JEE Main" required>
+
+        <input
+          id="cYear"
+          type="number"
+          min="1991"
+          max="2026"
+          placeholder="Year"
+          required
+        >
+
+        <select id="cSubject" required>
+          <option value="">Subject</option>
+          <option>Physics</option>
+          <option>Chemistry</option>
+          <option>Maths</option>
+        </select>
+
+        <input id="cChapter" placeholder="Chapter" required>
+
+        <input id="cTopic" placeholder="Topic">
+
+        <select id="cDifficulty">
+          <option>Easy</option>
+          <option selected>Medium</option>
+          <option>Hard</option>
+        </select>
+
+        <textarea
+          id="cQuestion"
+          placeholder="Question"
+          required
+        ></textarea>
+
+        <input id="cA" placeholder="Option A" required>
+        <input id="cB" placeholder="Option B" required>
+        <input id="cC" placeholder="Option C" required>
+        <input id="cD" placeholder="Option D" required>
+
+        <select id="cAnswer">
+          <option value="0">Correct: A</option>
+          <option value="1">Correct: B</option>
+          <option value="2">Correct: C</option>
+          <option value="3">Correct: D</option>
+        </select>
+
+        <textarea
+          id="cSolution"
+          placeholder="Solution / explanation"
+        ></textarea>
+
+        <button class="primary-btn" type="submit">
+          SAVE QUESTION
+        </button>
+
+      </form>
+
+    </main>
+
+
+    <!-- ================= SETTINGS ================= -->
+    <main id="settings" class="page">
+
+      <div class="page-title">
+        <div class="eyebrow">SETTINGS</div>
+        <h1>Control your archive.</h1>
+      </div>
+
+      <div class="settings-list">
+
+        <button class="setting-row" onclick="exportData()">
+          <span>
+            <strong>EXPORT DATA</strong>
+            <small>Save your progress as JSON.</small>
+          </span>
+          →
+        </button>
+
+        <label class="setting-row">
+          <span>
+            <strong>IMPORT QUESTIONS</strong>
+            <small>Load your own question bank.</small>
+          </span>
+
+          <input
+            id="importFile"
+            type="file"
+            accept=".json"
+            hidden
+          >
+
+          <button
+            type="button"
+            class="small-btn"
+            onclick="document.getElementById('importFile').click()"
+          >
+            IMPORT
+          </button>
+        </label>
+
+        <button class="setting-row danger-row" onclick="resetApp()">
+          <span>
+            <strong>RESET APP</strong>
+            <small>Delete local progress and questions.</small>
+          </span>
+          →
+        </button>
+
+      </div>
+
+    </main>
+
+
+    <!-- ================= BOTTOM NAV ================= -->
+    <nav class="bottom-nav">
+
+      <button
+        class="nav-item active"
+        data-page="dashboard"
+        onclick="openPage('dashboard')"
+      >
+        <span>⌂</span>
+        <small>HOME</small>
+      </button>
+
+      <button
+        class="nav-item"
+        data-page="archive"
+        onclick="openPage('archive')"
+      >
+        <span>▣</span>
+        <small>ARCHIVE</small>
+      </button>
+
+      <button
+        class="nav-item"
+        data-page="mistakes"
+        onclick="startMistakes()"
+      >
+        <span>×</span>
+        <small>MISTAKES</small>
+      </button>
+
+      <button
+        class="nav-item"
+        data-page="dna"
+        onclick="openPage('dna')"
+      >
+        <span>◌</span>
+        <small>DNA</small>
+      </button>
+
+      <button
+        class="nav-item"
+        data-page="settings"
+        onclick="openPage('settings')"
+      >
+        <span>⋯</span>
+        <small>MORE</small>
+      </button>
+
+    </nav>
+
+  </div>
+
+
+  <script src="script.js"></script>
+
 </body>
 </html>
