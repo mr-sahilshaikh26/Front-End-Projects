@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="navbar">
+        <div>
+            <h1>Shop <span>Market</span></h1>
+        </div>
+        <div id="name">
+            <a href="">Home</a>
+            <a href="">Products</a>
+            <a href="">Categoires</a>
+            <a href="">About Us</a>
+            <a href="">Cart</a>
+        </div>
+        <div id="not-visiale"></div>
+        <!-- navbar card End -->
+    </div>
+    <div id="card-container">
+        <div class="card">
+            <img
+             src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRLbOggsciTnyUR4g-gVni7YsYaQKtXTU3TlPk4rKqajg&s=10"
+              />
+              <h2>GUESS Watch </h2>
+              <h4>⭐⭐⭐⭐⭐ <span style="color: gray;">(523)</span></h4>
+              <h3> &#x20B9; 10,999 <del style="color: grey;">15,999</del></h3>
+              <button>Buy Now</button>
+        </div>
+        <div class="card">
+            <img
+             src="https://www.caratlane.com/blog/wp-content/uploads/2026/04/gold-accessories-for-men-2.jpg"
+              alt="premium Ring"
+              />
+              <h2>Premium Ring</h2>
+              <h4>⭐⭐⭐⭐⭐ <span style="color: gray;">(523)</span></h4>
+              <h3> &#x20B9; 10,999 <del style="color: grey;">12,00</del></h3>
+              <button>Buy Now</button>
+        </div>
+        <div class="card">
+            <img
+             src="https://content.jaxxon.com/image/upload/c_crop,w_3668,h_5896,x_300,y_69/c_scale,w_800,q_auto,f_auto/v1690676122/Family_Shot_Tigers_Eye_Malachite.jpg"
+              alt="watch"
+              />
+              <h2>Styless Braslate</h2>
+              <h4>⭐⭐⭐⭐⭐ <span style="color: gray;">(523)</span></h4>
+              <h3> &#x20B9; 10,999 <del style="color: grey;">599</del></h3>
+              <button>Buy Now</button>
+        </div>
+    </div>
+    
+    <div id="cart-toast" style="display:none; position:fixed; bottom:20px; right:20px; background:#1fb4e6; color:white; padding:12px 24px; border-radius:8px; box-shadow:0 4px 12px rgba(0,0,0,0.3); font-family:sans-serif; z-index:9999;"></div>
+
+    <script>
+      let cartCount = 0;
+      document.querySelectorAll('.card button').forEach((btn, index) => {
+        btn.addEventListener('click', () => {
+          cartCount++;
+          const card = btn.closest('.card');
+          const title = card.querySelector('h2').textContent.trim();
+          const cartLink = document.querySelector('#name a:last-child');
+          if (cartLink) {
+            cartLink.textContent = `Cart (${cartCount})`;
+          }
+          const toast = document.getElementById('cart-toast');
+          toast.textContent = `Added "${title}" to cart! (${cartCount} items in cart)`;
+          toast.style.display = 'block';
+          setTimeout(() => {
+            toast.style.display = 'none';
+          }, 2500);
+        });
+      });
+    </script>
+</body>
+</html>
